@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereal 18th Birthday - The Guests</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'EB Garamond', serif;
+            background: linear-gradient(135deg, #F9DFE1 0%, #B9AF5F 100%);
+            color: #4a453f;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(245, 241, 235, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #cc7c72;
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: auto;
+            opacity: 0.8;
+            transform: rotate(5deg); 
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #8f944c;
+            font-weight: 300;
+            font-size: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #8a7a6a;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background-image: url('bg1.JPG');
+            background-size: cover;
+            background-position: top left;
+            background-repeat: no-repeat;
+            margin-top: 60px;
+
+            
+            overflow: hidden;
+            filter: sepia(10%) saturate(85%) brightness(105%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(248, 245, 240, 0.15);
+            z-index: 1;
+        }
+        
+        .hero-layout {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .portrait-overlay {
+            width: 320px;
+            height: 420px;
+            background: 
+                url('g1.JPG');
+            background-size: cover;
+            background-position: center;
+            border: 12px solid rgba(252, 249, 246, 0.95);
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.15),
+                inset 0 0 0 1px rgba(200, 190, 180, 0.2);
+            filter: sepia(5%) contrast(95%) brightness(102%);
+            flex-shrink: 0;
+            animation: fadeInLeft 2s ease-out 0.3s backwards;
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding-left: 6rem;
+            z-index: 3;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5.5rem;
+            font-weight: 300;
+            color: #cc7c72;
+            margin: 0;
+            line-height: 0.9;
+            letter-spacing: -1px;
+            animation: fadeInSoft 2.5s ease-out 0.8s backwards;
+        }
+        
+        .hero .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #cc7c72;
+            font-style: italic;
+            font-weight: 300;
+            margin: 1rem 0 0 0;
+            opacity: 0.9;
+            animation: fadeInSoft 2.5s ease-out 1.2s backwards;
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .hero .tagline {
+            font-size: 1rem;
+            color: #9d9189;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            animation: fadeInSoft 3s ease-out 1.6s backwards;
+        }
+        
+        @keyframes fadeInSoft {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Main Content */
+        .main-content {
+            position: relative;
+            background: #f8f6f2;
+            padding: 6rem 2rem 4rem;
+        }
+        
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 252, 248, 0.7);
+            border: 1px solid rgba(200, 190, 180, 0.3);
+            padding: 4rem 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            text-align: center;
+            color: #6b635a;
+            margin-bottom: 4rem;
+            position: relative;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 1px;
+            background: rgba(160, 150, 140, 0.5);
+        }
+        
+        .guests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .guest-card {
+            background: rgba(255, 252, 248, 0.9);
+            border: 1px solid rgba(200, 190, 180, 0.2);
+            padding: 3rem 2.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            backdrop-filter: blur(5px);
+        }
+        
+        .guest-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(240, 235, 225, 0.3) 0%, 
+                rgba(250, 245, 235, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .guest-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            border-color: rgba(180, 170, 160, 0.4);
+        }
+        
+        .guest-card:hover::before {
+            opacity: 1;
+        }
+        
+        .guest-initial {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, 
+                rgba(210, 200, 190, 0.8) 0%, 
+                rgba(225, 215, 205, 0.6) 100%);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #6b635a;
+            border: 2px solid rgba(200, 190, 180, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .guest-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #5a524a;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Vintage Photo Frame Effect */
+        .photo-frame {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 120px;
+            height: 90px;
+            background: rgba(245, 240, 230, 0.9);
+            border: 3px solid rgba(200, 190, 180, 0.4);
+            transform: rotate(-8deg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 0;
+            opacity: 0.7;
+        }
+        
+        .guest-card:nth-child(2n) .photo-frame {
+            transform: rotate(5deg);
+            top: -15px;
+            right: -25px;
+            left: auto;
+        }
+        
+        .guest-card:nth-child(3n) .photo-frame {
+            transform: rotate(-3deg);
+            top: -25px;
+            left: -15px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-layout {
+                padding: 0 2rem;
+            }
+            
+            .hero-content {
+                padding-left: 4rem;
+            }
+            
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 60vh;
+                padding: 3rem 0;
+            }
+            
+            .hero-layout {
+                flex-direction: column;
+                padding: 0 2rem;
+                text-align: center;
+            }
+            
+            .portrait-overlay {
+                width: 240px;
+                height: 300px;
+                margin-bottom: 3rem;
+            }
+            
+            .hero-content {
+                padding-left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+            
+            .content-wrapper {
+                padding: 3rem 2rem;
+                margin: 0 1rem;
+            }
+            
+            .guests-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .guest-card {
+                padding: 2.5rem 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .portrait-overlay {
+                width: 200px;
+                height: 250px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-wrap">
+                <img src="r-f2.png" class="logo-icon" alt="flower">
+                <span class="logo">HENNEKEN@18</span>
+            </div>            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#guests">GUESTS</a></li>
+                 <li><a href="candles.html">Candles</a></li>
+                <li><a href="roses.html">Roses</a></li>
+                <li><a href="bills.html">blue bills</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-layout">
+            <div class="portrait-overlay"></div>
+            <div class="hero-content">
+                <h1>MEET THE</h1>
+                <p class="subtitle">guests</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-wrapper">
+            <h2 class="section-title">The Guests</h2>
+            
+            <div class="guests-grid">
+                <div class="guest-card">
+                    <div class="guest-initial">B</div>
+                    <h3 class="guest-name">Mrs. Jendy Bilango & Family</h3>
+                </div>
+                
+                <div class="guest-card">
+                    <div class="guest-initial">C</div>
+                    <h3 class="guest-name">Mr. & Mrs. Calma</h3>
+                </div>
+                
+                <div class="guest-card">
+                    <div class="guest-initial">Q</div>
+                    <h3 class="guest-name">Ms. Lailanie Quitlong</h3>
+                </div>
+                
+                <div class="guest-card">
+                    <div class="guest-initial">A</div>
+                    <h3 class="guest-name">Ms. Arabella Saenz</h3>
+                </div>
+                
+                <div class="guest-card">
+                    <div class="guest-initial">C</div>
+                    <h3 class="guest-name">Ms. Cassandra Aemiel Nuqui</h3>
+                </div>
+                
+                <div class="guest-card">
+                    <div class="guest-initial">A</div>
+                    <h3 class="guest-name">Ms. Ayeza Mendoza</h3>
+                </div>
+
+                <div class="guest-card">
+                    <div class="guest-initial">N</div>
+                    <h3 class="guest-name">Ms. Nicole Mendoza</h3>
+                </div>
+
+                <div class="guest-card">
+                    <div class="guest-initial">E</div>
+                    <h3 class="guest-name">Mr. Edward Johnson</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Scroll-triggered animations with intersection observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Initialize scroll animations
+        window.addEventListener('load', () => {
+            const guestCards = document.querySelectorAll('.guest-card');
+            guestCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(40px)';
+                card.style.transition = `opacity 0.8s ease ${index * 0.15}s, transform 0.8s ease ${index * 0.15}s`;
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

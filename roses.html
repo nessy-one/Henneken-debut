@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18 Roses</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Playfair Display', serif;
+            background: #F1EBDB;
+            color: #8F944C;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Floating particles animation */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(185, 175, 95, 0.6);
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+            50% { opacity: 1; }
+            25% { transform: translateY(-100px) translateX(50px) rotate(90deg); }
+            75% { transform: translateY(-200px) translateX(-30px) rotate(180deg); }
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: #F1EBDB;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #cc7c72;
+        }
+        
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: auto;
+            opacity: 0.8;
+            transform: rotate(5deg); 
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #8F944C;
+            font-weight: 300;
+            font-size: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #cc7c72;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background-image: url('bg2.JPG');
+            background-size: cover;
+            background-position: top left;
+            background-repeat: no-repeat;
+            margin-top: 60px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(249, 223, 225, 0.5);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            z-index: 10;
+            animation: fadeInUp 1.5s ease-out;
+            position: relative;
+        }
+        
+        .hero-image {
+            width: 300px;
+            height: 330px;
+            border-radius: 20px;
+            object-fit: cover;
+            margin-bottom: 3px;
+            box-shadow: 0 20px 40px rgba(125, 151, 172, 0.3);
+            border: 3px solid rgba(249, 223, 225, 0.8);
+            transition: all 0.3s ease;
+            margin-top: 40px;
+        }
+        
+        .hero-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px rgba(125, 151, 172, 0.4);
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 8rem);
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: #cc7c72;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            opacity: 0.8;
+            color: #585b33;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 15;
+            animation: bounce 2s infinite;
+            color: #585b33;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        /* Roses Section */
+        .roses-section {
+            padding: 100px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-align: center;
+            margin-bottom: 80px;
+            color: #cc7c72;
+        }
+        
+        .roses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .rose-card {
+            background: rgba(249, 223, 225, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(185, 175, 95, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .rose-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(125, 151, 172, 0.15), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .rose-card::after {
+            content: '';
+            width: 40px;  
+            height: 40px;
+            background-image: url('r-f1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 2;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+            opacity: 0.3;
+            transform: rotate(15deg);
+            transition: all 0.3s ease;
+        }
+
+        @keyframes rotate-flower {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(90deg); }
+        }
+
+        .rose-card:hover::after {
+            animation: rotate-flower 10s linear infinite;
+            opacity: 1;
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .rose-card:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+        
+        .rose-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(125, 151, 172, 0.2);
+            background: rgba(249, 223, 225, 0.9);
+        }
+        
+        .rose-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #8F944C;
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+        
+        .rose-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #cc7c72;
+        }
+        
+        .rose-relationship {
+            font-size: 14px;
+            color: #7D97AC;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        
+        /* .rose-desc {
+            font-size: 16px;
+            font-style: italic;
+            line-height: 1.6;
+            color: #8F944C;
+        } */
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .nav-links a {
+                font-size: 12px;
+            }
+            
+            .roses-section {
+                padding: 60px 20px;
+            }
+            
+            .roses-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .rose-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-wrap">
+                <img src="r-f2.png" class="logo-icon" alt="flower">
+                <span class="logo">HENNEKEN@18</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#roses">18 Roses</a></li>
+                <li><a href="candles.html">Candles</a></li>
+                <li><a href="bills.html">blue bills</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="rose2.JPG" alt="Ethereal Portrait" class="hero-image">
+            <h1 class="hero-title">18 Roses</h1>
+            <p class="hero-subtitle">A Magical Celebration</p>
+        </div>
+        <div class="scroll-indicator">Scroll to discover</div>
+    </section>
+    
+    <section class="roses-section" id="roses">
+        <div class="r-container">
+            <h2 class="section-title">The Eighteen Roses</h2>
+            <div class="roses-grid">
+                <div class="rose-card">
+                    <div class="rose-number">01</div>
+                    <h3 class="rose-name">Eric Mijares</h3>
+                    <div class="rose-relationship">Father</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">02</div>
+                    <h3 class="rose-name">Aiden Dizon</h3>
+                    <div class="rose-relationship">Best friend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">03</div>
+                    <h3 class="rose-name">Ian Andrei Alano</h3>
+                    <div class="rose-relationship">Best friend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">04</div>
+                    <h3 class="rose-name">Jaymiel Mallari</h3>
+                    <div class="rose-relationship">Friend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">05</div>
+                    <h3 class="rose-name">Mclaine Andrei Nicdao</h3>
+                    <div class="rose-relationship">Friend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">06</div>
+                    <h3 class="rose-name">Jaero Bacani</h3>
+                    <div class="rose-relationship">Friend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">07</div>
+                    <h3 class="rose-name">Alvin Dela Cruz</h3>
+                    <div class="rose-relationship">Friend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">08</div>
+                    <h3 class="rose-name">Osmond Lacson</h3>
+                    <div class="rose-relationship">Friend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">09</div>
+                    <h3 class="rose-name">Justine Romero</h3>
+                    <div class="rose-relationship">Friend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">10</div>
+                    <h3 class="rose-name">Philip Almirante</h3>
+                    <div class="rose-relationship">Friend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">11</div>
+                    <h3 class="rose-name">John Alvin David</h3>
+                    <div class="rose-relationship">Friend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">12</div>
+                    <h3 class="rose-name">Arvie Quiming</h3>
+                    <div class="rose-relationship">Friend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">13</div>
+                    <h3 class="rose-name">Andjhay Matchado</h3>
+                    <div class="rose-relationship">Family Friend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">14</div>
+                    <h3 class="rose-name">Basti Calma</h3>
+                    <div class="rose-relationship">Sister's Boyfriend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">15</div>
+                    <h3 class="rose-name">Reyster Jowie Bilango</h3>
+                    <div class="rose-relationship">Sister's Boyfriend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">16</div>
+                    <h3 class="rose-name">Jeremiah Pangan</h3>
+                    <div class="rose-relationship">Boyfriend</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">17</div>
+                    <h3 class="rose-name">John McMorrow</h3>
+                    <div class="rose-relationship">Family</div>
+                </div>
+                
+                <div class="rose-card">
+                    <div class="rose-number">18</div>
+                    <h3 class="rose-name">Jack Daniel Mijares</h3>
+                    <div class="rose-relationship">Brother</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const numberOfParticles = 50;
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 8 + 8) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(245, 241, 235, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(245, 241, 235, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+        
+        // Initialize particles when page loads
+        window.addEventListener('load', createParticles);
+        
+        // Card hover effect enhancement
+        document.querySelectorAll('.rose-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

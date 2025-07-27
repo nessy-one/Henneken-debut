@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav class="navbar">
+        <div class="navi">
+            <ul class="nl">
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#event">event</a></li>
+                <li><a href="#18">18</a></li>
+                <li><a href="#gallery">gallery</a></li>
+                <li><a href="#guests">guests</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- home -->
+    <section id="home">
+        <div class="home">
+            <img src="h-img.JPG" alt="henneken@18">
+        </div>
+    </section>
+
+    <!-- countdown -->
+    <div class="cd-wrap">
+        <h1 class="milestone-text">join her in this amazing milestone</h1>
+        <div class="count">
+            <div class="countdown">
+                <div class="cd-item">
+                    <span class="cd-num" id="days">00</span>
+                    <span class="cd-label">Days</span>
+                </div>
+                <div class="cd-item">
+                    <span class="cd-num" id="hours">00</span>
+                    <span class="cd-label">Hours</span>
+                </div>
+                <div class="cd-item">
+                    <span class="cd-num" id="minutes">00</span>
+                    <span class="cd-label">Minutes</span>
+                </div>
+                <div class="cd-item">
+                    <span class="cd-num" id="seconds">00</span>
+                    <span class="cd-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- about divider -->
+    <div class="vertical-divider">
+        <div class="line"></div>
+        <div class="text">about</div>
+        <div class="line"></div>
+    </div>
+
+    <!-- about -->
+    <section id="about" class="abt">
+        <img class="tagline" src="every.png" alt="every girl has a story">
+
+        <div class="abt-content">
+            <div class="abt-card">
+                <img class="abt-img" src="abt-img1.JPG" alt="abt-img1">
+            </div>
+            <div class="abt-card">
+                <img class="abt-img" src="abt-img2.JPG" alt="abt-img2">
+            </div>
+            <div class="abt-card">
+                <img class="abt-img" src="abt-img3.JPG" alt="abt-img3">
+            </div>
+        </div>
+
+        <div class="abt-text">
+            <p> Henneken is turning 18 and we couldn't be more excited! She's an amazing friend, daughter, and sister who brings joy to everyone around her. From her love of music and art to her incredible kindness, Henneken truly makes the world a brighter place. </p> <br>
+            <p><strong>Interests:</strong> Baking, </p>
+            <p><strong>Favorite Quote:</strong> <em>"Life is either a daring adventure or nothing at all." – Helen Keller</em></p>
+            <p><strong>Dream:</strong> To travel the world and capture beautiful moments through her camera lens</p>
+        </div>
+    </section>
+
+    <!-- gallery -->
+    <section id="gallery" class="gallery-wrapper">
+        <div class="container">
+            <!-- Left sidebar with navigation menu -->
+            <div class="sidebar">
+                <nav class="nav-menu">
+                    <div class="gallery-title-header">
+                        <h1>her gallery</h1>
+                    </div>
+                    <div class="nav-item" data-category="childhood">
+                        <span>childhood memories</span>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="nav-item" data-category="baking">
+                        <span>baking</span>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="nav-item" data-category="family">
+                        <span>family</span>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="nav-item" data-category="friends">
+                        <span>friends</span>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="nav-item" data-category="years">
+                        <span>her through the years</span>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="nav-item" data-category="photoshoot">
+                        <span>pre-debut photoshoot</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Main content area -->
+            <div class="main-content">
+                <div class="welcome" id="welcome">
+                    <img src="g-img.JPG" alt="Welcome Image">
+                </div>
+
+                <!-- CHILDHOOD -->
+                <div class="gallery-section" id="gallery-childhood">
+                    <div class="gallery-header">
+                        <button class="back-button" onclick="goBack()">← Back</button>
+                        <h2 class="gallery-title">Childhood Memories</h2>
+                    </div>
+                    <div class="gallery-scroll-container">
+                        <div class="photo-grid">
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAKING -->
+                <div class="gallery-section" id="gallery-baking">
+                    <div class="gallery-header">
+                        <button class="back-button" onclick="goBack()">← Back</button>
+                        <h2 class="gallery-title">Baking</h2>
+                    </div>
+                    <div class="gallery-scroll-container">
+                        <div class="photo-grid">
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAMILY -->
+                <div class="gallery-section" id="gallery-family">
+                    <div class="gallery-header">
+                        <button class="back-button" onclick="goBack()">← Back</button>
+                        <h2 class="gallery-title">Family</h2>
+                    </div>
+                    <div class="gallery-scroll-container">
+                        <div class="photo-grid">
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FRIENDS -->
+                <div class="gallery-section" id="gallery-friends">
+                    <div class="gallery-header">
+                        <button class="back-button" onclick="goBack()">← Back</button>
+                        <h2 class="gallery-title">Friends</h2>
+                    </div>
+                    <div class="gallery-scroll-container">
+                        <div class="photo-grid">
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YEARS -->
+                <div class="gallery-section" id="gallery-years">
+                    <div class="gallery-header">
+                        <button class="back-button" onclick="goBack()">← Back</button>
+                        <h2 class="gallery-title">Her Through the Years</h2>
+                    </div>
+                    <div class="gallery-scroll-container">
+                        <div class="photo-grid">
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHOTOSHOOT -->
+                <div class="gallery-section" id="gallery-photoshoot">
+                    <div class="gallery-header">
+                        <button class="back-button" onclick="goBack()">← Back</button>
+                        <h2 class="gallery-title">Pre-debut Photoshoot</h2>
+                    </div>
+                    <div class="gallery-scroll-container">
+                        <div class="photo-grid">
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img1.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img2.png" alt="Photo 1"></div>
+                            <div class="photo-item"><img src="abt-img3.png" alt="Photo 1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- event divider -->
+    <div class="vertical-divider">
+        <div class="line"></div>
+        <div class="text">event</div>
+        <div class="line"></div>
+    </div>
+
+    <!-- event -->
+    <section id="event" class="event">
+        <div class="deets">
+            <img src="venue.png" alt="venue details">
+            <a href="https://maps.app.goo.gl/jCymEKsuX4FT29rz9">click to see directions on google maps</a>
+            <img src="d&d.png" alt="date & dresscode details">
+        </div>
+    </section>
+
+    <img class="gnt" src="G&T.png" alt="guests and traditions div">
+
+    <!-- 18 -->
+    <section id="18" class="eighteen">
+        <div class="traditions">
+            <a href="roses.html">
+                <img src="18 roses.png" alt="18 ROSES">
+            </a>
+            <a href="candles.html">
+                <img src="18 candles.png" alt="18 CANDLES">
+            </a>
+            <a href="bills.html">
+                <img src="18 blue bills.png" alt="18 BILLS">
+            </a>
+        </div>
+    </section>
+
+    <!-- guests -->
+    <section id="guests" class="guests">
+        <div class="people">
+            <img src="guests.png" alt="kenken">
+            <div class="g-text">
+                <h1><i>THE<br>GUESTS</i></h1>
+                <a href="guests.html"><i>click to view</i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <div class="footer">
+        <img src="footer.png" alt="kenken@18">
+    </div>
+
+    <script>
+        // JAVASCRIPT FOR COUNTDOWN
+        // Create floating particles
+        function createParticles() {
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                document.body.appendChild(particle);
+            }
+        }
+
+        // Target date: September 13, 2025
+        const targetDate = new Date('September 13, 2025 00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Initialize
+        createParticles();
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // END JS FOR COUNTDOWN
+
+        // JAVASCRIPT FOR GALLERY
+        
+        // JavaScript for gallery functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.nav-item');
+            const gallerySections = document.querySelectorAll('.gallery-section');
+            const welcome = document.getElementById('welcome');
+
+            // Add click listeners to navigation items
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    showGallery(category);
+                });
+            });
+
+            function showGallery(category) {
+                // Hide welcome screen
+                welcome.classList.add('hidden');
+                
+                // Hide all gallery sections
+                gallerySections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Show selected gallery section
+                const targetGallery = document.getElementById('gallery-' + category);
+                if (targetGallery) {
+                    targetGallery.classList.add('active');
+                    // Scroll to top of the gallery
+                    const scrollContainer = targetGallery.querySelector('.gallery-scroll-container');
+                    if (scrollContainer) {
+                        scrollContainer.scrollTop = 0;
+                    }
+                }
+            }
+
+            // Global function for back button
+            window.goBack = function() {
+                // Hide all gallery sections
+                gallerySections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Show welcome screen
+                welcome.classList.remove('hidden');
+            };
+
+            // Add smooth scrolling behavior
+            document.querySelectorAll('.gallery-scroll-container').forEach(container => {
+                container.style.scrollBehavior = 'smooth';
+            });
+        });
+    
+        
+        // Mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create hamburger menu if it doesn't exist
+            const navbar = document.querySelector('.navbar .navi');
+            const navList = document.querySelector('.nl');
+            
+            // Create hamburger button
+            const hamburger = document.createElement('div');
+            hamburger.className = 'hamburger';
+            hamburger.innerHTML = '<span></span><span></span><span></span>';
+            navbar.insertBefore(hamburger, navList);
+
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navList.classList.toggle('show');
+            });
+                        
+            // Toggle mobile menu
+            hamburger.addEventListener('click', function() {
+                navList.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on links
+            const navLinkItems = document.querySelectorAll('.nl a');
+            navLinkItems.forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('show');
+                    hamburger.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
