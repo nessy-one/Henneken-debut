@@ -81,6 +81,37 @@
         .nav-links a:hover {
             color: #8a7a6a;
         }
+
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #8F944C;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* Hamburger animation */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
         
         /* Hero Section */
         .hero {
@@ -359,6 +390,50 @@
         }
         
         @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+            
+            .logo {
+                font-size: 24px;
+            }
+
+            .logo-icon {
+                width: 30px;
+            }
+
+            .logo-wrap {
+                gap: 15px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: #F1EBDB;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: right 0.3s ease;
+                backdrop-filter: blur(10px);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 24px;
+                padding: 10px 20px;
+            }
+
             .hero {
                 height: auto;
                 min-height: 60vh;
@@ -409,6 +484,27 @@
         }
         
         @media (max-width: 480px) {
+            .header {
+                padding: 10px 15px;
+            }
+
+            .logo {
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+
+            .logo-icon {
+                width: 25px;
+            }
+
+            .logo-wrap {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 20px;
+            }
+
             .portrait-overlay {
                 width: 200px;
                 height: 250px;
@@ -437,6 +533,11 @@
                 <li><a href="roses.html">Roses</a></li>
                 <li><a href="bills.html">blue bills</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -525,6 +626,31 @@
                 card.style.transition = `opacity 0.8s ease ${index * 0.15}s, transform 0.8s ease ${index * 0.15}s`;
                 observer.observe(card);
             });
+        });
+    
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
         });
     </script>
 </body>
